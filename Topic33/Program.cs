@@ -19,6 +19,8 @@ namespace Topic33
             Console.WriteLine("Do I have a pet? {0}", hasPet);
             Console.WriteLine("My shoe size is {0}", shoeSize);
 
+            Console.WriteLine(int.MaxValue);
+            Console.WriteLine(int.MinValue);
         }
     }
 }
