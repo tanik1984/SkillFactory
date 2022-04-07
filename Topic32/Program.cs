@@ -6,10 +6,11 @@ namespace Topic32
     {
         static void Main(string[] args)
         {
-            string myName = "Jane";
+            const string myName = "Jane";
 
             Console.WriteLine(myName);
             Console.ReadKey();
+
         }
     }
 }
