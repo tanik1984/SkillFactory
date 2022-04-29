@@ -8,10 +8,10 @@ namespace Topic41
         {
             Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-            
+
             for (int i = 1; i < 5; i++)
             {
-                Console.WriteLine("Iteration{0}",i);
+                Console.WriteLine("Iteration{0}", i);
 
 
                 switch (Console.ReadLine())
@@ -48,6 +48,7 @@ namespace Topic41
             }
 
             Console.WriteLine("Цикл while");
+
 
             int k = 0;
 
@@ -91,6 +92,7 @@ namespace Topic41
 
                 k++;
             }
+
         }
     }
 }
