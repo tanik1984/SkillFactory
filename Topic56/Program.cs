@@ -39,7 +39,14 @@ namespace Topic56
 
         private static bool RequestBool()
         {
-            throw new NotImplementedException();
+            Console.Write("Есть ли у Вас питомец (да/нет)? ");
+
+            var value = Console.ReadLine();
+
+            if (value.ToLower() == "yes" || value.ToLower() == "да") 
+                return true;
+
+            return false;
         }
 
         private static (string name, string surname, int age) RequestUserInfo()
