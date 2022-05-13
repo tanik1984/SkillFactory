@@ -49,17 +49,17 @@ namespace Topic56
             return false;
         }
 
-        private static string[] RequestPetNames(int count)
+        private static string[] RequestNames(int count, string message)
         {
             var names = new string[count];
 
             for (var i = 0; i < names.Length; i++) 
-                names[i] = RequestString("Введите имя питомца №" + (i + 1) + ": ");
+                names[i] = RequestString(message + " №" + (i + 1) + ": ");
 
             return names;
         }
 
-        private static (string name, string surname, int age, string[] petNames) RequestUserInfo()
+        private static (string name, string surname, int age, string[] petNames, string[] colors) RequestUserInfo()
         {
             var name = RequestString("Введите имя: ");
             var surname = RequestString("Введите фамилию: ");
@@ -71,13 +71,17 @@ namespace Topic56
             if (hasPet == true)
             {
                 var petCount = RequestInt("Введите количество питомцев: ");
-                petNames = RequestPetNames(petCount);
+                petNames = RequestNames(petCount, "Введите имя питомца");
             }
 
-            return (name, surname, age, petNames);
+            var colorCount = RequestInt("Введите количество любимых цветов: ");
+
+            var colors = RequestNames(colorCount, "Введите название цвета");
+
+            return (name, surname, age, petNames, colors);
         }
 
-        private static void ShowUserInfo((string name, string surname, int age, string[] petNames) userInfo)
+        private static void ShowUserInfo((string name, string surname, int age, string[] petNames, string[] colors) userInfo)
         {
             Console.WriteLine();
             Console.WriteLine("Имя: {0}", userInfo.name);
@@ -93,6 +97,18 @@ namespace Topic56
                 Console.WriteLine("Питомцев: {0}", userInfo.petNames.Length);
 
                 foreach (var name in userInfo.petNames)
+                    Console.WriteLine("\t{0}", name);
+            }
+
+            if (userInfo.colors.Length ==0)
+            {
+                Console.WriteLine("Нет любимых цветов");
+            }
+            else
+            {
+                Console.WriteLine("Любимые цвета: {0}", userInfo.colors.Length);
+
+                foreach (var name in userInfo.colors)
                     Console.WriteLine("\t{0}", name);
             }
         }
