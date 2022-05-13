@@ -6,6 +6,7 @@ namespace Topic41
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
 
@@ -46,10 +47,7 @@ namespace Topic41
                         break;
                 }
             }
-
             Console.WriteLine("Цикл while");
-
-
             int k = 0;
 
             while (k < 3)
@@ -92,10 +90,20 @@ namespace Topic41
 
                 k++;
             }
-
         }
+        
+        
+        
     }
 }
+
+
+
+           
+
+        
+    
+
 
     
 
